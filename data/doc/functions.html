@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>functions API documentation</title>
+<meta name="description" content="Ce fichier &#34;functions.py&#34; regroupe toutes les fonctions nécessaires à la
+réalisation d&#39;un MVP pour la société My Content.
+Les commentaires et les …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>functions</code></h1>
+</header>
+<section id="section-intro">
+<p>Ce fichier "functions.py" regroupe toutes les fonctions nécessaires à la
+réalisation d'un MVP pour la société My Content.
+Les commentaires et les docstrings sont rédigés en français pour une meilleure
+lisibilité.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Ce fichier &#34;functions.py&#34; regroupe toutes les fonctions nécessaires à la
+réalisation d&#39;un MVP pour la société My Content.
+Les commentaires et les docstrings sont rédigés en français pour une meilleure
+lisibilité. 
+&#34;&#34;&#34;
+
+# Importation des librairies et modules nécessaires
+import logging
+
+import numpy as np
+import pandas as pd
+import plotly.express as px
+from pandas.api.types import is_numeric_dtype
+from sklearn.manifold import TSNE
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.preprocessing import StandardScaler
+
+
+def articles_feedback(df):
+    &#34;&#34;&#34;
+    Calcule le feedback des articles étant donné un jeu de données df_clicks.
+
+    Paramètres
+    ----------
+    df : Pandas.DataFrame
+        Jeu de données contenant les informations sur les clics
+        des utilisateurs sur les articles
+
+    Retourne
+    -------
+    feedback : Pandas.DataFrame
+        Jeu de données contenant le feedback des articles pour chaque
+        utilisateur
+    &#34;&#34;&#34;
+
+    # Compter le nombre de clics par article et par utilisateur
+    article_clicks = df.reset_index().groupby([&#34;user_id&#34;, &#34;click_article_id&#34;
+                                               ]).agg(clicks_article=(&#34;index&#34;,
+                                                                      &#34;count&#34;))
+    user_clicks = df.reset_index().groupby([&#34;user_id&#34;
+                                            ]).agg(clicks_user=(&#34;index&#34;,
+                                                                &#34;count&#34;))
+
+    # Joindre le nombre de clics par article et le nombre de clics
+    # par utilisateur
+    feedback = article_clicks.join(user_clicks, on=&#34;user_id&#34;)
+
+    # Calcule le feedback pour chaque article
+    feedback[&#34;feedback&#34;] = (feedback[&#34;clicks_article&#34;] /
+                            feedback[&#34;clicks_user&#34;])
+
+    # Remettre en forme le jeu de données
+    feedback = feedback[&#34;feedback&#34;].reset_index().rename(
+        {&#34;click_article_id&#34;: &#34;article_id&#34;}, axis=1)
+
+    return feedback
+
+
+def clean_df_articles(df: pd.DataFrame, cat_id: int) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Nettoye un DataFrame contenant des articles et leurs caractéristiques.
+
+    Arguments:
+        df (pd.DataFrame): DataFrame contenant des articles et leurs
+            caractéristiques.
+        cat_id (int): ID de la catégorie à conserver.
+
+    Retourne:
+        (pd.DataFrame): DataFrame nettoyé.
+    &#34;&#34;&#34;
+    # Suppression des colonnes &#34;article_id&#34; et &#34;similarity&#34;
+    clean_df = df.drop([&#34;article_id&#34;, &#34;similarity&#34;], axis=1, errors=&#34;ignore&#34;)
+
+    # Remplacement des valeurs de la colonne &#34;category_id&#34; par le &#34;category_id&#34;
+    # donné en argument si elles sont égales, sinon par 0
+    clean_df[&#34;category_id&#34;] = clean_df[&#34;category_id&#34;].apply(
+        lambda x: cat_id if int(x) == cat_id else 0)
+
+    # Transformation de la colonne &#34;created_at_ts&#34; en valeur int
+    clean_df[&#34;created_at_ts&#34;] = clean_df[&#34;created_at_ts&#34;].apply(
+        lambda x: x.value)
+
+    return clean_df
+
+
+def collaborative_filtering(user_id: int,
+                            model,
+                            articles_embeddings: pd.DataFrame,
+                            num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;Utilise un modèle de filtrage collaboratif pour trouver
+    les articles les plus pertinents pour un utilisateur.
+
+    Arguments:
+        user_id {int} -- Identifiant de l&#39;utilisateur.
+        model {objet} -- Modèle de filtrage collaboratif.
+        articles_embeddings {pd.DataFrame} -- Dataframe avec les articles et
+            leurs embeddings.
+
+    Mots-clés:
+        num_recommendations {int} -- Nombre d&#39;articles à recommander
+            (default: {5})
+
+    Retourne:
+        list -- Liste des articles recommandés pour l&#39;utilisateur.
+    &#34;&#34;&#34;
+
+    # Générer une liste des articles et de leurs prédictions
+    predictions = [{
+        &#34;article_id&#34;: prediction.iid,
+        &#34;prediction&#34;: prediction.est
+    } for article in articles_embeddings[&#34;article_id&#34;]
+        for prediction in [model.predict(uid=user_id, iid=article)]]
+
+    # Trier les articles par prédiction et récupérer les ids
+    # des n meilleurs articles
+    return list(
+        pd.DataFrame(predictions,
+                     columns=[&#34;article_id&#34;, &#34;prediction&#34;]).sort_values(
+            by=&#34;prediction&#34;, ascending=False).reset_index(
+            drop=True)[&#34;article_id&#34;][:num_recommendations])
+
+
+def content_based_recommended_articles(popular, articles, result_num=5):
+    &#34;&#34;&#34;
+    Cette fonction retourne des articles recommandés basé sur le contenu
+    à partir d&#39;un jeu de données donné.
+
+    Arguments:
+        popular (pandas DataFrame): Le jeu de données qui contient les
+            articles les plus populaires.
+        articles (pandas DataFrame): Le jeu de données qui contient
+            tous les articles.
+        result_num (int): Le nombre de résultats à retourner (défaut: 5).
+
+    Retourne:
+        Une liste contenant un DataFrame des articles recommandés,
+        un objet StandardScaler,
+        un tableau numpy pour les articles et
+        un tableau numpy pour les articles populaires.
+    &#34;&#34;&#34;
+
+    # Récupérer l&#39;ID de catégorie de l&#39;article le plus populaire
+    category_id = popular[&#34;category_id&#34;].iloc[0]
+
+    # Initialiser un objet StandardScaler
+    scaler = StandardScaler()
+
+    # Prétraiter les données
+    scaled_articles = scaler.fit_transform(
+        clean_df_articles(articles, category_id))
+    scaled_popular = scaler.transform(clean_df_articles(popular, category_id))
+
+    # Copier le DataFrame des articles
+    articles = articles.copy()
+
+    # Calculer la similarité entre les articles populaires
+    # et les autres articles
+    articles[&#34;similarity&#34;] = cosine_similarity(scaled_popular,
+                                               scaled_articles)[0]
+
+    # Trier et retourner les articles recommandés
+    return articles.sort_values(
+        &#34;similarity&#34;, ascending=False
+    ).iloc[:result_num], scaler, scaled_articles, scaled_popular
+
+
+def groupby_user_articles(df_articles_features):
+    &#34;&#34;&#34;
+    Fonction qui groupe les articles par utilisateur et prend en compte
+    les moyennes et les modalités pour chaque colonne.
+
+    Arguments
+    ----------
+    df_articles_features : DataFrame
+       DataFrame contenant les articles et leurs caractéristiques.
+
+    Retourne
+    -------
+    DataFrame
+        DataFrame groupé par utilisateur et contenant les moyennes
+        et les modalités pour chaque colonne.
+    &#34;&#34;&#34;
+    # définir le type de fonction à appliquer pour chaque colonne
+    agg_dict = {}
+    for col in df_articles_features.columns:
+        if is_numeric_dtype(df_articles_features.dtypes[col]):
+            agg_dict[col] = &#39;mean&#39;
+        else:
+            agg_dict[col] = lambda x: x.mode()[0]
+
+    # grouper les données par utilisateur
+    df_user_articles_features = df_articles_features.groupby(
+        lambda x: True).agg(agg_dict)
+
+    return df_user_articles_features
+
+
+def implicit_article_idxs(user_index: int,
+                          rec_model: object,
+                          user_interaction_matrix: object,
+                          num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;
+    Retourne une liste d&#39;index d&#39;articles pour un utilisateur donné à partir
+    du modèle de recommandation et du feedback d&#39;interaction de l&#39;utilisateur.
+
+    Arguments:
+        user_index (int): Numero d&#39;index de l&#39;utilisateur
+        rec_model (object): Modele utilisé pour la recommandation
+        user_interaction_matrix (object): Objet sparse représentant le
+            feedback d&#39;interaction de l&#39;utilisateur
+        num_recommendations (int, optional): Nombre de recommandations à
+            retourner. Par défaut, c&#39;est 5.
+
+    Retourne:
+        list: Une liste d&#39;index d&#39;article
+    &#34;&#34;&#34;
+    article_indices, _ = rec_model.recommend(
+        user_index,
+        user_interaction_matrix[user_index],
+        N=num_recommendations,
+        filter_already_liked_items=False)
+    return article_indices
+
+
+def last_read_articles(user_id: int, df_clicks: pd.DataFrame,
+                       df_articles_emb: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Retourne le dernier article lu par un utilisateur donné.
+
+    Arguments:
+        user_id (int): l&#39;identifiant de l&#39;utilisateur
+        df_clicks (pd.DataFrame): le jeu de données contenant les informations
+            sur les clics
+        df_articles_emb (pd.DataFrame): le jeu de données contenant les
+            informations sur les articles
+
+    Retourne:
+        pd.DataFrame: un DataFrame contenant les informations sur le dernier
+            article lu par l&#39;utilisateur
+    &#34;&#34;&#34;
+
+    # Convertir l&#39;ID de l&#39;utilisateur en chaîne de caractères
+    user_id_str = str(user_id)
+
+    # Récupérer les informations sur le dernier article lu par l&#39;utilisateur
+    last_read_article_id = (
+        df_clicks.query(&#34;user_id == @user_id_str&#34;).sort_values(
+            &#34;click_timestamp&#34;, ascending=False).reset_index(
+            drop=True).iloc[0][&#34;click_article_id&#34;])
+
+    # Récupérer les informations sur l&#39;article
+    last_read_article_info = df_articles_emb.query(
+        &#34;article_id == @last_read_article_id&#34;)
+
+    return last_read_article_info
+
+
+def lightfm_recommendation(user_id: int,
+                           model,
+                           dataset,
+                           num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;
+    Retourne une liste d&#39;`num_recommendations` articles recommandés par le
+    modèle `model` pour l&#39;utilisateur `user_id`.
+
+    Arguments
+    ----------
+    user_id : int
+        Identifiant de l&#39;utilisateur pour lequel effectuer les 
+        recommandations.
+    model : objet
+        Modèle utilisé pour calculer les prédictions.
+    dataset : objet
+        Jeu de données utilisé pour récupérer les articles correspondants 
+        aux prédictions.
+    num_recommendations : int, optional
+        Nombre d&#39;articles à inclure dans la liste de recommandations.
+        Par défaut : 5.
+
+    Retourne
+    -------
+    list
+        Une liste des `num_recommendations` articles recommandés pour
+        l&#39;utilisateur `user_id`.
+    &#34;&#34;&#34;
+    # Récupération de l&#39;index de l&#39;utilisateur
+    user_index = dataset._user_id_mapping[user_id]
+
+    # Prédiction des articles recommandés
+    predictions = model.predict(user_ids=user_index,
+                                item_ids=list(
+                                    dataset._item_id_mapping.values()))
+
+    # Création d&#39;un `DataFrame` pour stocker les articles et leurs prédictions
+    predictions_df = pd.DataFrame({
+        &#34;article_id&#34;:
+            list(dataset._item_id_mapping.keys()),
+        &#34;prediction&#34;:
+            predictions
+    })
+
+    # Tri des articles en fonction de leurs prédictions
+    predictions_df.sort_values(&#34;prediction&#34;, ascending=False, inplace=True)
+
+    # Retourne les `num_recommendations` articles les mieux prédits
+    return list(predictions_df.head(num_recommendations)[&#34;article_id&#34;])
+
+
+def plot_tsne_articles(articles_sample_std, popular_articles_std, popular_std,
+                       popular_articles, article_embeddings_sample, user_id,
+                       user_interest):
+    &#34;&#34;&#34;
+    Cette fonction permet de tracer un graphique t-SNE représentant les
+    articles recommandés et les articles populaires, ainsi que le niveau
+    d&#39;intérêt de l&#39;utilisateur pour la catégorie.
+
+    Arguments:
+        articles_sample_std (ndarray): tableau numpy contenant les vecteurs
+            des articles recommandés dans leur version standardisée.
+        popular_articles_std (ndarray): tableau numpy contenant les vecteurs
+            des articles populaires dans leur version standardisée.
+        popular_std (ndarray): vecteur du niveau d&#39;intérêt de l&#39;utilisateur
+            pour la catégorie dans sa version standardisée.
+        popular_articles (DataFrame): DataFrame contenant les articles
+            populaires avec leur ID et catégorie.
+        article_embeddings_sample (DataFrame): DataFrame avec les ID et
+            catégories des articles recommandés.
+        user_id (int): ID de l&#39;utilisateur.
+        user_interest (DataFrame): DataFrame contenant le niveau d&#39;intérêt de
+            l&#39;utilisateur pour la catégorie.
+
+    Retourne:
+        (Figures): Graphique t-SNE représentant les articles
+            recommandés et les articles populaires, ainsi que le niveau
+            d&#39;intérêt de l&#39;utilisateur pour la catégorie.
+    &#34;&#34;&#34;
+
+    # Création du modèle t-SNE
+    tsne_model = TSNE(n_components=2)
+
+    # Calcul des vecteurs t-SNE
+    articles_tsne = tsne_model.fit_transform(
+        np.concatenate(
+            (articles_sample_std, popular_articles_std, popular_std)))
+
+    # Séparation des vecteurs t-SNE
+    user_interest_tsne = articles_tsne[-1:]
+    articles_tsne = articles_tsne[:-1]
+    popular_articles_tsne = articles_tsne[-len(popular_articles):]
+    articles_tsne = articles_tsne[:-len(popular_articles)]
+
+    # Création du graphique
+    fig = px.scatter(x=articles_tsne[:, 0],
+                     y=articles_tsne[:, 1],
+                     color=article_embeddings_sample[&#34;category_id&#34;],
+                     symbol=article_embeddings_sample[&#34;category_id&#34;],
+                     title=&#34;TSNE de recommendation d&#39;articles&#34;)
+
+    # Ajout des points représentant le niveau d&#39;intérêt de l&#39;utilisateur
+    fig.add_scatter(
+        x=user_interest_tsne[:, 0],
+        y=user_interest_tsne[:, 1],
+        mode=&#34;markers&#34;,
+        marker={
+            &#39;size&#39;: 60,
+            &#39;opacity&#39;: 0.5
+        },
+        text=f&#34;Intérêt de l&#39;utilisateur {user_id} sur la catégorie \
+        {user_interest[&#39;category_id&#39;].iloc[0]}&#34;)
+
+    # Ajout des points représentant les articles populaires
+    fig.add_scatter(x=popular_articles_tsne[:, 0],
+                    y=popular_articles_tsne[:, 1],
+                    mode=&#34;markers&#34;,
+                    marker={
+                        &#39;color&#39;: list(range(len(popular_articles_tsne))),
+                        &#39;size&#39;: 40,
+                        &#39;opacity&#39;: 0.5
+                    },
+                    text=[
+                        f&#34;Rang : {i} - Article : {a.article_id} \
+                        - Catégorie : {a.category_id}&#34;
+                        for i, a in enumerate(popular_articles.itertuples())
+                    ])
+
+    # Mise à jour du graphique
+    fig.update_layout(showlegend=False)
+    fig.show()
+
+
+def predicted_articles_precision(y_true: dict,
+                                 y_pred: dict,
+                                 df_articles_emb: pd.DataFrame,
+                                 k: int = 5) -&gt; float:
+    &#34;&#34;&#34;Calcule la précision moyenne d&#39;un modèle de recommandation d&#39;articles
+        basé sur les articles prédits.
+
+    Arguments:
+        y_true {dict}: dictionnaire {user_id: article_id_vrai}
+        y_pred {dict}: dictionnaire
+            {user_id: [article_id_1, article_id_2, ...]}
+        df_articles_emb {pd.DataFrame}: tableau des articles et leurs
+            catégories associées
+        k {int}: nombre maximum d&#39;articles à prendre en compte pour chaque
+            utilisateur (par défaut 5)
+
+    Retourne:
+        float: précision moyenne des articles prédits
+    &#34;&#34;&#34;
+
+    # Initialiser la précision moyenne
+    average_precision = 0
+
+    # Itérer sur chaque utilisateur
+    for user_id, pred_article_ids in y_pred.items():
+        # Vérifier si l&#39;utilisateur est présent dans les vraies valeurs
+        if user_id not in y_true.keys():
+            logging.warning(
+                f&#34;L&#39;utilisateur {user_id} est introuvable dans les vraies &#34;
+                &#34;valeurs&#34;)
+            continue
+
+        # Récupérer la catégorie de l&#39;article vrai
+        true_category_id = df_articles_emb.iloc[int(
+            y_true[user_id])].category_id
+
+        # Récupérer les catégories des articles prédits
+        pred_categories = df_articles_emb.iloc[[
+            int(pred_article_id) for pred_article_id in pred_article_ids[:k]
+        ]].category_id
+
+        # Calculer la précision moyenne
+        average_precision += len(
+            pred_categories[pred_categories == true_category_id]) / k
+
+    # Diviser par le nombre d&#39;utilisateurs
+    return average_precision / len(y_pred)
+
+
+def read_articles(user_id: int, clicks_df: pd.DataFrame,
+                  articles_embeddings_df: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Cette fonction lit les articles lus par un utilisateur et retourne
+    un dataframe des articles les plus populaires de cet utilisateur.
+
+    Arguments:
+        user_id (int): l&#39;ID d&#39;utilisateur.
+        clicks_df (pd.DataFrame): le dataframe des clics par utilisateur.
+        articles_embeddings_df (pd.DataFrame): le dataframe des articles et de
+            leurs embeddings.
+
+    Retourne:
+        pd.DataFrame: Le dataframe des articles les plus populaires de cet
+            utilisateur.
+    &#34;&#34;&#34;
+    user_clicked_articles = clicks_df[clicks_df[&#39;user_id&#39;] == str(
+        user_id)][&#39;click_article_id&#39;]
+    popular_articles = groupby_user_articles(
+        articles_embeddings_df[articles_embeddings_df[&#39;article_id&#39;].isin(
+            user_clicked_articles)]).drop([&#39;article_id&#39;], axis=1)
+    return popular_articles
+
+
+def recommendation_metrics(real_values: dict,
+                           predictions: dict,
+                           method: str = &#39;mean&#39;) -&gt; float:
+    &#34;&#34;&#34;
+    Calcule la métrique de recommandation en fonction de la méthode choisie.
+
+    Arguments
+    ----------
+    real_values : dict
+        Dictionnaire des vraies valeurs
+    predictions : dict
+        Dictionnaire des prédictions
+    method : str, optional
+        La méthode à utiliser pour le calcul de la métrique, par défaut &#39;mean&#39;
+
+    Retourne
+    -------
+    float
+        La métrique de recommandation calculée
+    &#34;&#34;&#34;
+
+    metric_score = 0
+    total_user_count = 0
+
+    for user_id, predicted_article_ids in predictions.items():
+        # Vérifie que l&#39;utilisateur est bien présent dans les vraies valeurs
+        if user_id not in real_values.keys():
+            logging.info(
+                f&#34;L&#39;utilisateur {user_id} est introuvable dans les vraies valeurs.&#34;
+            )
+            continue
+
+        # Récupère la valeur réelle de l&#39;utilisateur
+        true_article_id = str(real_values[user_id])
+
+        # Vérifie que l&#39;article est bien présent dans les prédictions
+        if true_article_id not in predicted_article_ids:
+            logging.info(
+                f&#34;L&#39;article {true_article_id} n&#39;a pas été trouvé dans les &#34;
+                &#34;prédictions de l&#39;utilisateur {user_id}.&#34;)
+            continue
+
+        # Calcule le classement de l&#39;article
+        article_rank = predicted_article_ids.index(true_article_id) + 1
+
+        # Calcule la métrique en fonction de la méthode choisie
+        if method == &#39;mean&#39;:
+            metric_score += article_rank
+        elif method == &#39;score&#39;:
+            metric_score += 1 / article_rank
+        else:
+            raise ValueError(f&#34;La méthode &#39;{method}&#39; n&#39;est pas supportée.&#34;)
+
+        total_user_count += 1
+
+    return metric_score / total_user_count
+
+
+def simple_cbf_recommendation(user_id: int,
+                              interactions_df: pd.DataFrame,
+                              article_embeddings: np.ndarray,
+                              number_of_recommendations: int = 5) -&gt; list[int]:
+    &#34;&#34;&#34;Renvoie les n articles les plus similaires à l&#39;article le plus
+    récent lu par l&#39;utilisateur.
+
+    Arguments
+    ----------
+    user_id : int
+        Identifiant de l&#39;utilisateur
+    interactions_df : pd.DataFrame
+        DataFrame contenant les interactions entre les utilisateurs et les
+        articles
+    article_embeddings : np.ndarray
+        Embeddings à utiliser pour calculer la similarité entre les articles
+    number_of_recommendations : int
+        Nombre d&#39;articles à recommander
+
+    Retourne
+    -------
+    list[int]
+        Liste des identifiants des articles recommandés
+    &#34;&#34;&#34;
+    # Convertit les colonnes numériques en entiers
+    interactions_df = interactions_df.astype(np.int64)
+    # Convertit les embeddings en flottant
+    embeddings_for_recommendation = article_embeddings.astype(np.float32)
+    # Récupère la liste des articles lus par l&#39;utilisateur
+    user_read_articles = interactions_df.loc[interactions_df.user_id ==
+                                             user_id][&#39;article_id&#39;].to_list()
+    # Récupère l&#39;identifiant de l&#39;article le plus récent lu
+    most_recent_article = user_read_articles[-1]
+    # Supprime les articles précédemment lus de la liste des embeddings
+    for article_id in user_read_articles[:-1]:
+        embeddings_for_recommendation = np.delete(
+            embeddings_for_recommendation, [article_id], 0)
+    # Supprime l&#39;article précédemment lu avant de calculer les similarités
+    embeddings_without_last_read_article = np.delete(
+        embeddings_for_recommendation, [most_recent_article], 0)
+    # Calcule les similarités entre l&#39;article le plus récent lu et les autres
+    articles_similarity = cosine_similarity(
+        [embeddings_for_recommendation[most_recent_article]],
+        embeddings_without_last_read_article)[0]
+    # Récupère les n articles les plus similaires
+    recommended_articles_ids = np.argsort(
+        articles_similarity)[::-1][0:number_of_recommendations]
+    # Renvoie la liste des identifiants des articles recommandés
+    return recommended_articles_ids</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="functions.articles_feedback"><code class="name flex">
+<span>def <span class="ident">articles_feedback</span></span>(<span>df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcule le feedback des articles étant donné un jeu de données df_clicks.</p>
+<h2 id="parametres">Paramètres</h2>
+<p>df : Pandas.DataFrame
+Jeu de données contenant les informations sur les clics
+des utilisateurs sur les articles</p>
+<h2 id="retourne">Retourne</h2>
+<p>feedback : Pandas.DataFrame
+Jeu de données contenant le feedback des articles pour chaque
+utilisateur</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def articles_feedback(df):
+    &#34;&#34;&#34;
+    Calcule le feedback des articles étant donné un jeu de données df_clicks.
+
+    Paramètres
+    ----------
+    df : Pandas.DataFrame
+        Jeu de données contenant les informations sur les clics
+        des utilisateurs sur les articles
+
+    Retourne
+    -------
+    feedback : Pandas.DataFrame
+        Jeu de données contenant le feedback des articles pour chaque
+        utilisateur
+    &#34;&#34;&#34;
+
+    # Compter le nombre de clics par article et par utilisateur
+    article_clicks = df.reset_index().groupby([&#34;user_id&#34;, &#34;click_article_id&#34;
+                                               ]).agg(clicks_article=(&#34;index&#34;,
+                                                                      &#34;count&#34;))
+    user_clicks = df.reset_index().groupby([&#34;user_id&#34;
+                                            ]).agg(clicks_user=(&#34;index&#34;,
+                                                                &#34;count&#34;))
+
+    # Joindre le nombre de clics par article et le nombre de clics
+    # par utilisateur
+    feedback = article_clicks.join(user_clicks, on=&#34;user_id&#34;)
+
+    # Calcule le feedback pour chaque article
+    feedback[&#34;feedback&#34;] = (feedback[&#34;clicks_article&#34;] /
+                            feedback[&#34;clicks_user&#34;])
+
+    # Remettre en forme le jeu de données
+    feedback = feedback[&#34;feedback&#34;].reset_index().rename(
+        {&#34;click_article_id&#34;: &#34;article_id&#34;}, axis=1)
+
+    return feedback</code></pre>
+</details>
+</dd>
+<dt id="functions.clean_df_articles"><code class="name flex">
+<span>def <span class="ident">clean_df_articles</span></span>(<span>df: pandas.core.frame.DataFrame, cat_id: int) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Nettoye un DataFrame contenant des articles et leurs caractéristiques.</p>
+<h2 id="arguments">Arguments</h2>
+<p>df (pd.DataFrame): DataFrame contenant des articles et leurs
+caractéristiques.
+cat_id (int): ID de la catégorie à conserver.</p>
+<h2 id="retourne">Retourne</h2>
+<p>(pd.DataFrame): DataFrame nettoyé.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clean_df_articles(df: pd.DataFrame, cat_id: int) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Nettoye un DataFrame contenant des articles et leurs caractéristiques.
+
+    Arguments:
+        df (pd.DataFrame): DataFrame contenant des articles et leurs
+            caractéristiques.
+        cat_id (int): ID de la catégorie à conserver.
+
+    Retourne:
+        (pd.DataFrame): DataFrame nettoyé.
+    &#34;&#34;&#34;
+    # Suppression des colonnes &#34;article_id&#34; et &#34;similarity&#34;
+    clean_df = df.drop([&#34;article_id&#34;, &#34;similarity&#34;], axis=1, errors=&#34;ignore&#34;)
+
+    # Remplacement des valeurs de la colonne &#34;category_id&#34; par le &#34;category_id&#34;
+    # donné en argument si elles sont égales, sinon par 0
+    clean_df[&#34;category_id&#34;] = clean_df[&#34;category_id&#34;].apply(
+        lambda x: cat_id if int(x) == cat_id else 0)
+
+    # Transformation de la colonne &#34;created_at_ts&#34; en valeur int
+    clean_df[&#34;created_at_ts&#34;] = clean_df[&#34;created_at_ts&#34;].apply(
+        lambda x: x.value)
+
+    return clean_df</code></pre>
+</details>
+</dd>
+<dt id="functions.collaborative_filtering"><code class="name flex">
+<span>def <span class="ident">collaborative_filtering</span></span>(<span>user_id: int, model, articles_embeddings: pandas.core.frame.DataFrame, num_recommendations: int = 5) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Utilise un modèle de filtrage collaboratif pour trouver
+les articles les plus pertinents pour un utilisateur.</p>
+<h2 id="arguments">Arguments</h2>
+<p>user_id {int} &ndash; Identifiant de l'utilisateur.
+model {objet} &ndash; Modèle de filtrage collaboratif.
+articles_embeddings {pd.DataFrame} &ndash; Dataframe avec les articles et
+leurs embeddings.</p>
+<p>Mots-clés:
+num_recommendations {int} &ndash; Nombre d'articles à recommander
+(default: {5})</p>
+<h2 id="retourne">Retourne</h2>
+<p>list &ndash; Liste des articles recommandés pour l'utilisateur.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collaborative_filtering(user_id: int,
+                            model,
+                            articles_embeddings: pd.DataFrame,
+                            num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;Utilise un modèle de filtrage collaboratif pour trouver
+    les articles les plus pertinents pour un utilisateur.
+
+    Arguments:
+        user_id {int} -- Identifiant de l&#39;utilisateur.
+        model {objet} -- Modèle de filtrage collaboratif.
+        articles_embeddings {pd.DataFrame} -- Dataframe avec les articles et
+            leurs embeddings.
+
+    Mots-clés:
+        num_recommendations {int} -- Nombre d&#39;articles à recommander
+            (default: {5})
+
+    Retourne:
+        list -- Liste des articles recommandés pour l&#39;utilisateur.
+    &#34;&#34;&#34;
+
+    # Générer une liste des articles et de leurs prédictions
+    predictions = [{
+        &#34;article_id&#34;: prediction.iid,
+        &#34;prediction&#34;: prediction.est
+    } for article in articles_embeddings[&#34;article_id&#34;]
+        for prediction in [model.predict(uid=user_id, iid=article)]]
+
+    # Trier les articles par prédiction et récupérer les ids
+    # des n meilleurs articles
+    return list(
+        pd.DataFrame(predictions,
+                     columns=[&#34;article_id&#34;, &#34;prediction&#34;]).sort_values(
+            by=&#34;prediction&#34;, ascending=False).reset_index(
+            drop=True)[&#34;article_id&#34;][:num_recommendations])</code></pre>
+</details>
+</dd>
+<dt id="functions.content_based_recommended_articles"><code class="name flex">
+<span>def <span class="ident">content_based_recommended_articles</span></span>(<span>popular, articles, result_num=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cette fonction retourne des articles recommandés basé sur le contenu
+à partir d'un jeu de données donné.</p>
+<h2 id="arguments">Arguments</h2>
+<p>popular (pandas DataFrame): Le jeu de données qui contient les
+articles les plus populaires.
+articles (pandas DataFrame): Le jeu de données qui contient
+tous les articles.
+result_num (int): Le nombre de résultats à retourner (défaut: 5).</p>
+<h2 id="retourne">Retourne</h2>
+<p>Une liste contenant un DataFrame des articles recommandés,
+un objet StandardScaler,
+un tableau numpy pour les articles et
+un tableau numpy pour les articles populaires.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def content_based_recommended_articles(popular, articles, result_num=5):
+    &#34;&#34;&#34;
+    Cette fonction retourne des articles recommandés basé sur le contenu
+    à partir d&#39;un jeu de données donné.
+
+    Arguments:
+        popular (pandas DataFrame): Le jeu de données qui contient les
+            articles les plus populaires.
+        articles (pandas DataFrame): Le jeu de données qui contient
+            tous les articles.
+        result_num (int): Le nombre de résultats à retourner (défaut: 5).
+
+    Retourne:
+        Une liste contenant un DataFrame des articles recommandés,
+        un objet StandardScaler,
+        un tableau numpy pour les articles et
+        un tableau numpy pour les articles populaires.
+    &#34;&#34;&#34;
+
+    # Récupérer l&#39;ID de catégorie de l&#39;article le plus populaire
+    category_id = popular[&#34;category_id&#34;].iloc[0]
+
+    # Initialiser un objet StandardScaler
+    scaler = StandardScaler()
+
+    # Prétraiter les données
+    scaled_articles = scaler.fit_transform(
+        clean_df_articles(articles, category_id))
+    scaled_popular = scaler.transform(clean_df_articles(popular, category_id))
+
+    # Copier le DataFrame des articles
+    articles = articles.copy()
+
+    # Calculer la similarité entre les articles populaires
+    # et les autres articles
+    articles[&#34;similarity&#34;] = cosine_similarity(scaled_popular,
+                                               scaled_articles)[0]
+
+    # Trier et retourner les articles recommandés
+    return articles.sort_values(
+        &#34;similarity&#34;, ascending=False
+    ).iloc[:result_num], scaler, scaled_articles, scaled_popular</code></pre>
+</details>
+</dd>
+<dt id="functions.groupby_user_articles"><code class="name flex">
+<span>def <span class="ident">groupby_user_articles</span></span>(<span>df_articles_features)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction qui groupe les articles par utilisateur et prend en compte
+les moyennes et les modalités pour chaque colonne.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>df_articles_features</code></strong> :&ensp;<code>DataFrame</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>DataFrame contenant les articles et leurs caractéristiques.</p>
+<h2 id="retourne">Retourne</h2>
+<p>DataFrame
+DataFrame groupé par utilisateur et contenant les moyennes
+et les modalités pour chaque colonne.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def groupby_user_articles(df_articles_features):
+    &#34;&#34;&#34;
+    Fonction qui groupe les articles par utilisateur et prend en compte
+    les moyennes et les modalités pour chaque colonne.
+
+    Arguments
+    ----------
+    df_articles_features : DataFrame
+       DataFrame contenant les articles et leurs caractéristiques.
+
+    Retourne
+    -------
+    DataFrame
+        DataFrame groupé par utilisateur et contenant les moyennes
+        et les modalités pour chaque colonne.
+    &#34;&#34;&#34;
+    # définir le type de fonction à appliquer pour chaque colonne
+    agg_dict = {}
+    for col in df_articles_features.columns:
+        if is_numeric_dtype(df_articles_features.dtypes[col]):
+            agg_dict[col] = &#39;mean&#39;
+        else:
+            agg_dict[col] = lambda x: x.mode()[0]
+
+    # grouper les données par utilisateur
+    df_user_articles_features = df_articles_features.groupby(
+        lambda x: True).agg(agg_dict)
+
+    return df_user_articles_features</code></pre>
+</details>
+</dd>
+<dt id="functions.implicit_article_idxs"><code class="name flex">
+<span>def <span class="ident">implicit_article_idxs</span></span>(<span>user_index: int, rec_model: object, user_interaction_matrix: object, num_recommendations: int = 5) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retourne une liste d'index d'articles pour un utilisateur donné à partir
+du modèle de recommandation et du feedback d'interaction de l'utilisateur.</p>
+<h2 id="arguments">Arguments</h2>
+<p>user_index (int): Numero d'index de l'utilisateur
+rec_model (object): Modele utilisé pour la recommandation
+user_interaction_matrix (object): Objet sparse représentant le
+feedback d'interaction de l'utilisateur
+num_recommendations (int, optional): Nombre de recommandations à
+retourner. Par défaut, c'est 5.</p>
+<h2 id="retourne">Retourne</h2>
+<p>list: Une liste d'index d'article</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def implicit_article_idxs(user_index: int,
+                          rec_model: object,
+                          user_interaction_matrix: object,
+                          num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;
+    Retourne une liste d&#39;index d&#39;articles pour un utilisateur donné à partir
+    du modèle de recommandation et du feedback d&#39;interaction de l&#39;utilisateur.
+
+    Arguments:
+        user_index (int): Numero d&#39;index de l&#39;utilisateur
+        rec_model (object): Modele utilisé pour la recommandation
+        user_interaction_matrix (object): Objet sparse représentant le
+            feedback d&#39;interaction de l&#39;utilisateur
+        num_recommendations (int, optional): Nombre de recommandations à
+            retourner. Par défaut, c&#39;est 5.
+
+    Retourne:
+        list: Une liste d&#39;index d&#39;article
+    &#34;&#34;&#34;
+    article_indices, _ = rec_model.recommend(
+        user_index,
+        user_interaction_matrix[user_index],
+        N=num_recommendations,
+        filter_already_liked_items=False)
+    return article_indices</code></pre>
+</details>
+</dd>
+<dt id="functions.last_read_articles"><code class="name flex">
+<span>def <span class="ident">last_read_articles</span></span>(<span>user_id: int, df_clicks: pandas.core.frame.DataFrame, df_articles_emb: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retourne le dernier article lu par un utilisateur donné.</p>
+<h2 id="arguments">Arguments</h2>
+<p>user_id (int): l'identifiant de l'utilisateur
+df_clicks (pd.DataFrame): le jeu de données contenant les informations
+sur les clics
+df_articles_emb (pd.DataFrame): le jeu de données contenant les
+informations sur les articles</p>
+<h2 id="retourne">Retourne</h2>
+<p>pd.DataFrame: un DataFrame contenant les informations sur le dernier
+article lu par l'utilisateur</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def last_read_articles(user_id: int, df_clicks: pd.DataFrame,
+                       df_articles_emb: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Retourne le dernier article lu par un utilisateur donné.
+
+    Arguments:
+        user_id (int): l&#39;identifiant de l&#39;utilisateur
+        df_clicks (pd.DataFrame): le jeu de données contenant les informations
+            sur les clics
+        df_articles_emb (pd.DataFrame): le jeu de données contenant les
+            informations sur les articles
+
+    Retourne:
+        pd.DataFrame: un DataFrame contenant les informations sur le dernier
+            article lu par l&#39;utilisateur
+    &#34;&#34;&#34;
+
+    # Convertir l&#39;ID de l&#39;utilisateur en chaîne de caractères
+    user_id_str = str(user_id)
+
+    # Récupérer les informations sur le dernier article lu par l&#39;utilisateur
+    last_read_article_id = (
+        df_clicks.query(&#34;user_id == @user_id_str&#34;).sort_values(
+            &#34;click_timestamp&#34;, ascending=False).reset_index(
+            drop=True).iloc[0][&#34;click_article_id&#34;])
+
+    # Récupérer les informations sur l&#39;article
+    last_read_article_info = df_articles_emb.query(
+        &#34;article_id == @last_read_article_id&#34;)
+
+    return last_read_article_info</code></pre>
+</details>
+</dd>
+<dt id="functions.lightfm_recommendation"><code class="name flex">
+<span>def <span class="ident">lightfm_recommendation</span></span>(<span>user_id: int, model, dataset, num_recommendations: int = 5) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retourne une liste d'<code>num_recommendations</code> articles recommandés par le
+modèle <code>model</code> pour l'utilisateur <code>user_id</code>.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>user_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>Identifiant de l'utilisateur pour lequel effectuer les
+recommandations.</dd>
+<dt><strong><code>model</code></strong> :&ensp;<code>objet</code></dt>
+<dd>Modèle utilisé pour calculer les prédictions.</dd>
+<dt><strong><code>dataset</code></strong> :&ensp;<code>objet</code></dt>
+<dd>Jeu de données utilisé pour récupérer les articles correspondants
+aux prédictions.</dd>
+<dt><strong><code>num_recommendations</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Nombre d'articles à inclure dans la liste de recommandations.
+Par défaut : 5.</dd>
+</dl>
+<h2 id="retourne">Retourne</h2>
+<p>list
+Une liste des <code>num_recommendations</code> articles recommandés pour
+l'utilisateur <code>user_id</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lightfm_recommendation(user_id: int,
+                           model,
+                           dataset,
+                           num_recommendations: int = 5) -&gt; list:
+    &#34;&#34;&#34;
+    Retourne une liste d&#39;`num_recommendations` articles recommandés par le
+    modèle `model` pour l&#39;utilisateur `user_id`.
+
+    Arguments
+    ----------
+    user_id : int
+        Identifiant de l&#39;utilisateur pour lequel effectuer les 
+        recommandations.
+    model : objet
+        Modèle utilisé pour calculer les prédictions.
+    dataset : objet
+        Jeu de données utilisé pour récupérer les articles correspondants 
+        aux prédictions.
+    num_recommendations : int, optional
+        Nombre d&#39;articles à inclure dans la liste de recommandations.
+        Par défaut : 5.
+
+    Retourne
+    -------
+    list
+        Une liste des `num_recommendations` articles recommandés pour
+        l&#39;utilisateur `user_id`.
+    &#34;&#34;&#34;
+    # Récupération de l&#39;index de l&#39;utilisateur
+    user_index = dataset._user_id_mapping[user_id]
+
+    # Prédiction des articles recommandés
+    predictions = model.predict(user_ids=user_index,
+                                item_ids=list(
+                                    dataset._item_id_mapping.values()))
+
+    # Création d&#39;un `DataFrame` pour stocker les articles et leurs prédictions
+    predictions_df = pd.DataFrame({
+        &#34;article_id&#34;:
+            list(dataset._item_id_mapping.keys()),
+        &#34;prediction&#34;:
+            predictions
+    })
+
+    # Tri des articles en fonction de leurs prédictions
+    predictions_df.sort_values(&#34;prediction&#34;, ascending=False, inplace=True)
+
+    # Retourne les `num_recommendations` articles les mieux prédits
+    return list(predictions_df.head(num_recommendations)[&#34;article_id&#34;])</code></pre>
+</details>
+</dd>
+<dt id="functions.plot_tsne_articles"><code class="name flex">
+<span>def <span class="ident">plot_tsne_articles</span></span>(<span>articles_sample_std, popular_articles_std, popular_std, popular_articles, article_embeddings_sample, user_id, user_interest)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cette fonction permet de tracer un graphique t-SNE représentant les
+articles recommandés et les articles populaires, ainsi que le niveau
+d'intérêt de l'utilisateur pour la catégorie.</p>
+<h2 id="arguments">Arguments</h2>
+<p>articles_sample_std (ndarray): tableau numpy contenant les vecteurs
+des articles recommandés dans leur version standardisée.
+popular_articles_std (ndarray): tableau numpy contenant les vecteurs
+des articles populaires dans leur version standardisée.
+popular_std (ndarray): vecteur du niveau d'intérêt de l'utilisateur
+pour la catégorie dans sa version standardisée.
+popular_articles (DataFrame): DataFrame contenant les articles
+populaires avec leur ID et catégorie.
+article_embeddings_sample (DataFrame): DataFrame avec les ID et
+catégories des articles recommandés.
+user_id (int): ID de l'utilisateur.
+user_interest (DataFrame): DataFrame contenant le niveau d'intérêt de
+l'utilisateur pour la catégorie.</p>
+<h2 id="retourne">Retourne</h2>
+<p>(Figures): Graphique t-SNE représentant les articles
+recommandés et les articles populaires, ainsi que le niveau
+d'intérêt de l'utilisateur pour la catégorie.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_tsne_articles(articles_sample_std, popular_articles_std, popular_std,
+                       popular_articles, article_embeddings_sample, user_id,
+                       user_interest):
+    &#34;&#34;&#34;
+    Cette fonction permet de tracer un graphique t-SNE représentant les
+    articles recommandés et les articles populaires, ainsi que le niveau
+    d&#39;intérêt de l&#39;utilisateur pour la catégorie.
+
+    Arguments:
+        articles_sample_std (ndarray): tableau numpy contenant les vecteurs
+            des articles recommandés dans leur version standardisée.
+        popular_articles_std (ndarray): tableau numpy contenant les vecteurs
+            des articles populaires dans leur version standardisée.
+        popular_std (ndarray): vecteur du niveau d&#39;intérêt de l&#39;utilisateur
+            pour la catégorie dans sa version standardisée.
+        popular_articles (DataFrame): DataFrame contenant les articles
+            populaires avec leur ID et catégorie.
+        article_embeddings_sample (DataFrame): DataFrame avec les ID et
+            catégories des articles recommandés.
+        user_id (int): ID de l&#39;utilisateur.
+        user_interest (DataFrame): DataFrame contenant le niveau d&#39;intérêt de
+            l&#39;utilisateur pour la catégorie.
+
+    Retourne:
+        (Figures): Graphique t-SNE représentant les articles
+            recommandés et les articles populaires, ainsi que le niveau
+            d&#39;intérêt de l&#39;utilisateur pour la catégorie.
+    &#34;&#34;&#34;
+
+    # Création du modèle t-SNE
+    tsne_model = TSNE(n_components=2)
+
+    # Calcul des vecteurs t-SNE
+    articles_tsne = tsne_model.fit_transform(
+        np.concatenate(
+            (articles_sample_std, popular_articles_std, popular_std)))
+
+    # Séparation des vecteurs t-SNE
+    user_interest_tsne = articles_tsne[-1:]
+    articles_tsne = articles_tsne[:-1]
+    popular_articles_tsne = articles_tsne[-len(popular_articles):]
+    articles_tsne = articles_tsne[:-len(popular_articles)]
+
+    # Création du graphique
+    fig = px.scatter(x=articles_tsne[:, 0],
+                     y=articles_tsne[:, 1],
+                     color=article_embeddings_sample[&#34;category_id&#34;],
+                     symbol=article_embeddings_sample[&#34;category_id&#34;],
+                     title=&#34;TSNE de recommendation d&#39;articles&#34;)
+
+    # Ajout des points représentant le niveau d&#39;intérêt de l&#39;utilisateur
+    fig.add_scatter(
+        x=user_interest_tsne[:, 0],
+        y=user_interest_tsne[:, 1],
+        mode=&#34;markers&#34;,
+        marker={
+            &#39;size&#39;: 60,
+            &#39;opacity&#39;: 0.5
+        },
+        text=f&#34;Intérêt de l&#39;utilisateur {user_id} sur la catégorie \
+        {user_interest[&#39;category_id&#39;].iloc[0]}&#34;)
+
+    # Ajout des points représentant les articles populaires
+    fig.add_scatter(x=popular_articles_tsne[:, 0],
+                    y=popular_articles_tsne[:, 1],
+                    mode=&#34;markers&#34;,
+                    marker={
+                        &#39;color&#39;: list(range(len(popular_articles_tsne))),
+                        &#39;size&#39;: 40,
+                        &#39;opacity&#39;: 0.5
+                    },
+                    text=[
+                        f&#34;Rang : {i} - Article : {a.article_id} \
+                        - Catégorie : {a.category_id}&#34;
+                        for i, a in enumerate(popular_articles.itertuples())
+                    ])
+
+    # Mise à jour du graphique
+    fig.update_layout(showlegend=False)
+    fig.show()</code></pre>
+</details>
+</dd>
+<dt id="functions.predicted_articles_precision"><code class="name flex">
+<span>def <span class="ident">predicted_articles_precision</span></span>(<span>y_true: dict, y_pred: dict, df_articles_emb: pandas.core.frame.DataFrame, k: int = 5) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcule la précision moyenne d'un modèle de recommandation d'articles
+basé sur les articles prédits.</p>
+<h2 id="arguments">Arguments</h2>
+<p>y_true {dict}: dictionnaire {user_id: article_id_vrai}
+y_pred {dict}: dictionnaire
+{user_id: [article_id_1, article_id_2, &hellip;]}
+df_articles_emb {pd.DataFrame}: tableau des articles et leurs
+catégories associées
+k {int}: nombre maximum d'articles à prendre en compte pour chaque
+utilisateur (par défaut 5)</p>
+<h2 id="retourne">Retourne</h2>
+<p>float: précision moyenne des articles prédits</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predicted_articles_precision(y_true: dict,
+                                 y_pred: dict,
+                                 df_articles_emb: pd.DataFrame,
+                                 k: int = 5) -&gt; float:
+    &#34;&#34;&#34;Calcule la précision moyenne d&#39;un modèle de recommandation d&#39;articles
+        basé sur les articles prédits.
+
+    Arguments:
+        y_true {dict}: dictionnaire {user_id: article_id_vrai}
+        y_pred {dict}: dictionnaire
+            {user_id: [article_id_1, article_id_2, ...]}
+        df_articles_emb {pd.DataFrame}: tableau des articles et leurs
+            catégories associées
+        k {int}: nombre maximum d&#39;articles à prendre en compte pour chaque
+            utilisateur (par défaut 5)
+
+    Retourne:
+        float: précision moyenne des articles prédits
+    &#34;&#34;&#34;
+
+    # Initialiser la précision moyenne
+    average_precision = 0
+
+    # Itérer sur chaque utilisateur
+    for user_id, pred_article_ids in y_pred.items():
+        # Vérifier si l&#39;utilisateur est présent dans les vraies valeurs
+        if user_id not in y_true.keys():
+            logging.warning(
+                f&#34;L&#39;utilisateur {user_id} est introuvable dans les vraies &#34;
+                &#34;valeurs&#34;)
+            continue
+
+        # Récupérer la catégorie de l&#39;article vrai
+        true_category_id = df_articles_emb.iloc[int(
+            y_true[user_id])].category_id
+
+        # Récupérer les catégories des articles prédits
+        pred_categories = df_articles_emb.iloc[[
+            int(pred_article_id) for pred_article_id in pred_article_ids[:k]
+        ]].category_id
+
+        # Calculer la précision moyenne
+        average_precision += len(
+            pred_categories[pred_categories == true_category_id]) / k
+
+    # Diviser par le nombre d&#39;utilisateurs
+    return average_precision / len(y_pred)</code></pre>
+</details>
+</dd>
+<dt id="functions.read_articles"><code class="name flex">
+<span>def <span class="ident">read_articles</span></span>(<span>user_id: int, clicks_df: pandas.core.frame.DataFrame, articles_embeddings_df: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cette fonction lit les articles lus par un utilisateur et retourne
+un dataframe des articles les plus populaires de cet utilisateur.</p>
+<h2 id="arguments">Arguments</h2>
+<p>user_id (int): l'ID d'utilisateur.
+clicks_df (pd.DataFrame): le dataframe des clics par utilisateur.
+articles_embeddings_df (pd.DataFrame): le dataframe des articles et de
+leurs embeddings.</p>
+<h2 id="retourne">Retourne</h2>
+<p>pd.DataFrame: Le dataframe des articles les plus populaires de cet
+utilisateur.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_articles(user_id: int, clicks_df: pd.DataFrame,
+                  articles_embeddings_df: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Cette fonction lit les articles lus par un utilisateur et retourne
+    un dataframe des articles les plus populaires de cet utilisateur.
+
+    Arguments:
+        user_id (int): l&#39;ID d&#39;utilisateur.
+        clicks_df (pd.DataFrame): le dataframe des clics par utilisateur.
+        articles_embeddings_df (pd.DataFrame): le dataframe des articles et de
+            leurs embeddings.
+
+    Retourne:
+        pd.DataFrame: Le dataframe des articles les plus populaires de cet
+            utilisateur.
+    &#34;&#34;&#34;
+    user_clicked_articles = clicks_df[clicks_df[&#39;user_id&#39;] == str(
+        user_id)][&#39;click_article_id&#39;]
+    popular_articles = groupby_user_articles(
+        articles_embeddings_df[articles_embeddings_df[&#39;article_id&#39;].isin(
+            user_clicked_articles)]).drop([&#39;article_id&#39;], axis=1)
+    return popular_articles</code></pre>
+</details>
+</dd>
+<dt id="functions.recommendation_metrics"><code class="name flex">
+<span>def <span class="ident">recommendation_metrics</span></span>(<span>real_values: dict, predictions: dict, method: str = 'mean') ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcule la métrique de recommandation en fonction de la méthode choisie.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>real_values</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionnaire des vraies valeurs</dd>
+<dt><strong><code>predictions</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionnaire des prédictions</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>La méthode à utiliser pour le calcul de la métrique, par défaut 'mean'</dd>
+</dl>
+<h2 id="retourne">Retourne</h2>
+<p>float
+La métrique de recommandation calculée</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def recommendation_metrics(real_values: dict,
+                           predictions: dict,
+                           method: str = &#39;mean&#39;) -&gt; float:
+    &#34;&#34;&#34;
+    Calcule la métrique de recommandation en fonction de la méthode choisie.
+
+    Arguments
+    ----------
+    real_values : dict
+        Dictionnaire des vraies valeurs
+    predictions : dict
+        Dictionnaire des prédictions
+    method : str, optional
+        La méthode à utiliser pour le calcul de la métrique, par défaut &#39;mean&#39;
+
+    Retourne
+    -------
+    float
+        La métrique de recommandation calculée
+    &#34;&#34;&#34;
+
+    metric_score = 0
+    total_user_count = 0
+
+    for user_id, predicted_article_ids in predictions.items():
+        # Vérifie que l&#39;utilisateur est bien présent dans les vraies valeurs
+        if user_id not in real_values.keys():
+            logging.info(
+                f&#34;L&#39;utilisateur {user_id} est introuvable dans les vraies valeurs.&#34;
+            )
+            continue
+
+        # Récupère la valeur réelle de l&#39;utilisateur
+        true_article_id = str(real_values[user_id])
+
+        # Vérifie que l&#39;article est bien présent dans les prédictions
+        if true_article_id not in predicted_article_ids:
+            logging.info(
+                f&#34;L&#39;article {true_article_id} n&#39;a pas été trouvé dans les &#34;
+                &#34;prédictions de l&#39;utilisateur {user_id}.&#34;)
+            continue
+
+        # Calcule le classement de l&#39;article
+        article_rank = predicted_article_ids.index(true_article_id) + 1
+
+        # Calcule la métrique en fonction de la méthode choisie
+        if method == &#39;mean&#39;:
+            metric_score += article_rank
+        elif method == &#39;score&#39;:
+            metric_score += 1 / article_rank
+        else:
+            raise ValueError(f&#34;La méthode &#39;{method}&#39; n&#39;est pas supportée.&#34;)
+
+        total_user_count += 1
+
+    return metric_score / total_user_count</code></pre>
+</details>
+</dd>
+<dt id="functions.simple_cbf_recommendation"><code class="name flex">
+<span>def <span class="ident">simple_cbf_recommendation</span></span>(<span>user_id: int, interactions_df: pandas.core.frame.DataFrame, article_embeddings: numpy.ndarray, number_of_recommendations: int = 5) ‑> list[int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renvoie les n articles les plus similaires à l'article le plus
+récent lu par l'utilisateur.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>user_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>Identifiant de l'utilisateur</dd>
+<dt><strong><code>interactions_df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame contenant les interactions entre les utilisateurs et les
+articles</dd>
+<dt><strong><code>article_embeddings</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Embeddings à utiliser pour calculer la similarité entre les articles</dd>
+<dt><strong><code>number_of_recommendations</code></strong> :&ensp;<code>int</code></dt>
+<dd>Nombre d'articles à recommander</dd>
+</dl>
+<h2 id="retourne">Retourne</h2>
+<p>list[int]
+Liste des identifiants des articles recommandés</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def simple_cbf_recommendation(user_id: int,
+                              interactions_df: pd.DataFrame,
+                              article_embeddings: np.ndarray,
+                              number_of_recommendations: int = 5) -&gt; list[int]:
+    &#34;&#34;&#34;Renvoie les n articles les plus similaires à l&#39;article le plus
+    récent lu par l&#39;utilisateur.
+
+    Arguments
+    ----------
+    user_id : int
+        Identifiant de l&#39;utilisateur
+    interactions_df : pd.DataFrame
+        DataFrame contenant les interactions entre les utilisateurs et les
+        articles
+    article_embeddings : np.ndarray
+        Embeddings à utiliser pour calculer la similarité entre les articles
+    number_of_recommendations : int
+        Nombre d&#39;articles à recommander
+
+    Retourne
+    -------
+    list[int]
+        Liste des identifiants des articles recommandés
+    &#34;&#34;&#34;
+    # Convertit les colonnes numériques en entiers
+    interactions_df = interactions_df.astype(np.int64)
+    # Convertit les embeddings en flottant
+    embeddings_for_recommendation = article_embeddings.astype(np.float32)
+    # Récupère la liste des articles lus par l&#39;utilisateur
+    user_read_articles = interactions_df.loc[interactions_df.user_id ==
+                                             user_id][&#39;article_id&#39;].to_list()
+    # Récupère l&#39;identifiant de l&#39;article le plus récent lu
+    most_recent_article = user_read_articles[-1]
+    # Supprime les articles précédemment lus de la liste des embeddings
+    for article_id in user_read_articles[:-1]:
+        embeddings_for_recommendation = np.delete(
+            embeddings_for_recommendation, [article_id], 0)
+    # Supprime l&#39;article précédemment lu avant de calculer les similarités
+    embeddings_without_last_read_article = np.delete(
+        embeddings_for_recommendation, [most_recent_article], 0)
+    # Calcule les similarités entre l&#39;article le plus récent lu et les autres
+    articles_similarity = cosine_similarity(
+        [embeddings_for_recommendation[most_recent_article]],
+        embeddings_without_last_read_article)[0]
+    # Récupère les n articles les plus similaires
+    recommended_articles_ids = np.argsort(
+        articles_similarity)[::-1][0:number_of_recommendations]
+    # Renvoie la liste des identifiants des articles recommandés
+    return recommended_articles_ids</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="functions.articles_feedback" href="#functions.articles_feedback">articles_feedback</a></code></li>
+<li><code><a title="functions.clean_df_articles" href="#functions.clean_df_articles">clean_df_articles</a></code></li>
+<li><code><a title="functions.collaborative_filtering" href="#functions.collaborative_filtering">collaborative_filtering</a></code></li>
+<li><code><a title="functions.content_based_recommended_articles" href="#functions.content_based_recommended_articles">content_based_recommended_articles</a></code></li>
+<li><code><a title="functions.groupby_user_articles" href="#functions.groupby_user_articles">groupby_user_articles</a></code></li>
+<li><code><a title="functions.implicit_article_idxs" href="#functions.implicit_article_idxs">implicit_article_idxs</a></code></li>
+<li><code><a title="functions.last_read_articles" href="#functions.last_read_articles">last_read_articles</a></code></li>
+<li><code><a title="functions.lightfm_recommendation" href="#functions.lightfm_recommendation">lightfm_recommendation</a></code></li>
+<li><code><a title="functions.plot_tsne_articles" href="#functions.plot_tsne_articles">plot_tsne_articles</a></code></li>
+<li><code><a title="functions.predicted_articles_precision" href="#functions.predicted_articles_precision">predicted_articles_precision</a></code></li>
+<li><code><a title="functions.read_articles" href="#functions.read_articles">read_articles</a></code></li>
+<li><code><a title="functions.recommendation_metrics" href="#functions.recommendation_metrics">recommendation_metrics</a></code></li>
+<li><code><a title="functions.simple_cbf_recommendation" href="#functions.simple_cbf_recommendation">simple_cbf_recommendation</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
